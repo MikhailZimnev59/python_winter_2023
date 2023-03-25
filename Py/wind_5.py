@@ -13,11 +13,18 @@ class MDIWindow(QMainWindow):
 
         self.mdi = QMdiArea()
         self.setCentralWidget(self.mdi)
+
         bar = self.menuBar()
+
         file = bar.addMenu("File")
         file.addAction("New")
         file.addAction("Cascade")
         file.addAction("Tiled")
+
+        edit = bar.addMenu("Edit")
+        edit.addAction("Find")
+        edit.addAction("Copy")
+        edit.addAction("Paste")
 
         exitAction = QAction(QIcon('t1.png'), 'Exit', self)
         exitAction.setShortcut('Ctrl+Q')
